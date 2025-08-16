@@ -1,0 +1,107 @@
+\relax 
+\citation{PINN}
+\citation{PINNapp}
+\citation{FourCastNet}
+\citation{FourOp}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Preliminaries}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Describing Curved Spaces}{1}{}\protected@file@percent }
+\citation{SemiR}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Path of Light and Some Geometrical Tools}{3}{}\protected@file@percent }
+\citation{BHlattice}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An illustration of the proposed toy problem for evaluating optimization performances. On the left is a visualization of the “blackhole grid” discretization of a mass distribution. This approach effectively approximates the spacetime containing the mass distribution as a vacuum solution of Einstein equations. Light traveling through this region is deflected due to the curvature of the space. The pink panel shows how the induced curvature from mass distribution $\mathbf  {m}^*$ distorts the image of a galaxy sitting behind the blackhole region. Blue dots indicate “structural landmarks” $\mathbf  {y_0}_i$, which alters location to $\mathbf  {y}_i$ as the trajectories of their light are curved. The blue panel demonstrates the optimization process, in which $\mathbf  {m}$ is optimized via gradient-based methods so that the result of the solved propagations $\mathcal  {S}(\mathbf  {y_0}_i, \mathbf  {m})$ matches with the observed $\mathbf  {y}_i$. One can see that as optimization progresses, dots in blue panel get closer to locations marked in the right image of the pink panel. The second row in the blue panel demonstrates how the mass distribution $\mathbf  {m}$ distorts the entire background throughout the course of optimization. }}{4}{}\protected@file@percent }
+\newlabel{fig}{{1}{4}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{4}{}\protected@file@percent }
+\citation{BLID}
+\citation{BSSN}
+\citation{BLID}
+\citation{SID}
+\citation{ADM}
+\citation{ADM+}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Brill-Lindquist Initial Data}{5}{}\protected@file@percent }
+\newlabel{AA}{{\mbox  {III-A}}{5}{}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Numerical Relativity and the BSSN Formalism}{5}{}\protected@file@percent }
+\newlabel{AA}{{\mbox  {III-B}}{5}{}{subsection.3.2}{}}
+\citation{ADMCS}
+\citation{BLID}
+\citation{BSSN}
+\citation{ADM+}
+\citation{BSSNBH}
+\citation{cao}
+\citation{cao}
+\citation{3_1Geo}
+\citation{DescentL}
+\citation{GDM}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Gradient-Based Optimization}{7}{}\protected@file@percent }
+\newlabel{AA}{{\mbox  {III-C}}{7}{}{subsection.3.3}{}}
+\citation{Jacobs}
+\citation{Sutton}
+\citation{RPROP}
+\citation{AdaGrad}
+\citation{Adam}
+\citation{Adam}
+\citation{Transformer}
+\citation{ViT}
+\citation{StyleGAN}
+\citation{RK4}
+\citation{torch}
+\citation{torch}
+\citation{NeuralODE}
+\citation{dpsrk}
+\citation{torch}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}The Adjoint Sensitivity Method}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Experiments}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Implementation}{8}{}\protected@file@percent }
+\citation{JWST}
+\citation{Adam}
+\citation{resnet}
+\citation{Transformer}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The desired mass distributions $\mathbf  {m}^*$ of static and evolving metric for optimization. Visible points in both plot represent positions of black holes with non-zero masses. For the static metric scenario, non-zero-mass black holes are located at $(-0.167, -0.167, -0.167)$ and $(0.167, 0.167, 0.167)$, both of mass 0.01. For evolving metrics, $\mathbf  {m}^*$ consists of 3 non-zero-mass blackholes at $(0, 0, 0)$, $(-0.5, 0.5, 0)$, and $(0.5, 0.5, 0)$, with masses of 0.07, 0.2, and 0.1, respectively.}}{9}{}\protected@file@percent }
+\newlabel{fig}{{2}{9}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Data and Parameters}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The values of $\mathcal  {L}$ over 300 iterations for both optimization methods on the static metric optimization problem. It is appearent from the graph that the adjoint sensitivity method soon reached a convergence, while the differentiation-over-solver method did not. For both methods, plotted values of $\mathcal  {L}$ are taken to be the average of 5 independent runs.}}{9}{}\protected@file@percent }
+\newlabel{fig}{{3}{9}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Results}{9}{}\protected@file@percent }
+\citation{dpsrk}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces An example of mass distribution $\mathbf  {m}$ evolving over time. The heatmap shows the values of $\phi $ in eq. (11) on a slice of 3 dimensional space at $z=0$. At time $t=0$, the values of $\phi $ are directly calculated from Brill-Lindquist initial data via relation $\phi = \ln (\psi )$. $\mathbf  {m}$ in the images consists of 4 blackholes at locations $(0.6, -0.3, 0), (-0.6, -0.3, 0), (-0.1, 0.3, 0)$, and $(0.1, -0.5, 0)$, with corresponding masses 0.5, 0.5, 0.2, and 0.9, respectively. BSSN numerical relativity solutions for $t \geq 0$ (as shown in the 4 images on the right), is computed via Runge-Kutta method of order 4, with step size $dt = 0.0625$. All other implementation details (e.g., finite difference grid spacings), are the identical to the descriptions in the \textit  {Experiments} section. One shall easily see the merging of the blackholes from the images as $t$ progresses}}{10}{}\protected@file@percent }
+\newlabel{fig}{{4}{10}{}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The plot of FTLE $\lambda _t$ evaluated for both optimization methods on static metrics, each with 100 steps run ($t=1, ..., 100$). The plotted values are calculated from a total of 10 independently initialized $\mathbf  {m}_0$ for both methods.}}{10}{}\protected@file@percent }
+\newlabel{fig}{{5}{10}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The plot of FTLE $\lambda _t$ evaluated for both optimization methods on evolving metrics, over a total of 15 optimization steps. The plotted values are calculated from 6 independently initialized $\mathbf  {m}_0$ for both methods.}}{10}{}\protected@file@percent }
+\newlabel{fig}{{6}{10}{}{figure.6}{}}
+\bibcite{PINN}{1}
+\bibcite{PINNapp}{2}
+\bibcite{FourCastNet}{3}
+\bibcite{FourOp}{4}
+\bibcite{SemiR}{5}
+\bibcite{BHlattice}{6}
+\bibcite{BLID}{7}
+\bibcite{BSSN}{8}
+\bibcite{SID}{9}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{11}{}\protected@file@percent }
+\bibcite{ADM}{10}
+\bibcite{ADM+}{11}
+\bibcite{ADMCS}{12}
+\bibcite{BSSNBH}{13}
+\bibcite{cao}{14}
+\bibcite{3_1Geo}{15}
+\bibcite{DescentL}{16}
+\bibcite{GDM}{17}
+\bibcite{Jacobs}{18}
+\bibcite{Sutton}{19}
+\bibcite{RPROP}{20}
+\bibcite{AdaGrad}{21}
+\bibcite{Adam}{22}
+\bibcite{Transformer}{23}
+\bibcite{StyleGAN}{24}
+\bibcite{ViT}{25}
+\bibcite{resnet}{26}
+\bibcite{RK4}{27}
+\bibcite{torch}{28}
+\bibcite{NeuralODE}{29}
+\bibcite{dpsrk}{30}
+\bibcite{JWST}{31}
+\bibcite{weinberg}{32}
+\bibcite{k_delta}{33}
+\gdef \@abspage@last{12}

@@ -1,0 +1,270 @@
+\documentclass{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{mathtools}
+
+% Custom unnumbered section format
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries}{}{0pt}{}  % Remove section number
+
+% Left-aligned large title
+\pretitle{\begin{flushleft}\LARGE\bfseries}
+\posttitle{\end{flushleft}}
+\preauthor{\begin{flushleft} \large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft} \large}
+\postdate{\end{flushleft}}
+\date{}
+
+% Title info
+\title{Appendix 2}
+\begin{document}
+
+\maketitle
+
+\section{The Null Geodesic}
+
+The path that a light beam, carrying negligible energy, follows 
+in the curved spacetime of General Relativity is known as the 
+null geodesic. It can be shown from the principle of 
+equivalence that the null geodesic follows the form [32]
+
+\[
+\frac{\partial^2 x^\lambda}{\partial \sigma^2} + 
+\frac{1}{2} g^{\lambda\alpha} \left( \frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++\frac{\partial g_{\beta\mu}}{\partial x^\nu}
+-\frac{\partial g_{\mu\nu}}{\partial x^\beta}\right)
+\frac{\partial x^\mu}{\partial \sigma}
+\frac{\partial x^\nu}{\partial \sigma}
+ = 0,
+\]
+where $x(\sigma)$ represents the trajectory of the light beam parameterized 
+by $\sigma$, and $g$ is the spacetime metric at location $x$. 
+Recall from the main paper that $ g^{\lambda\alpha}$ denotes the 
+inverse metric. The principle of equivalence states that: for any point 
+in space and any moment in time, we can always define a free-falling 
+inertial frame of reference that the effect of gravity is locally absent. 
+In such case, physical laws in this local region can be described by 
+only the theory of Special Relativity, thus allowing us to analyze 
+infinitesimal motions, including that of light, as inertial motions 
+(i.e., motions of object in the absence of external forces) in 
+flat spacetime. If we choose the flow of time in these local reference 
+frames as our parameterization $\sigma$, and let $x^\alpha$ denote 
+the coordinate position of the light beam at a moment in time, then 
+the following equality must hold:
+\[
+\frac{\partial^2 x^\alpha}{\partial \sigma^2} = 0
+\]
+To constrain the speed of this beam, we shall impose
+\[
+\eta_{AB} \frac{\partial x^A}{\partial \sigma} \frac{\partial x^B}{\partial \sigma}= 0,
+\]
+where $\eta_{AB}$ represents the Minkowski metric
+\[
+\eta_{AB} =
+\begin{bmatrix}
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+This ensures that
+the light beam's trajectory through spacetime 
+stays on the null cone, as per the description of Special Relativity.
+\\
+
+Now imagine that the light departs this local inertial frame as it travels 
+forward. Meanwhile, there exist a varying gravitational field at every 
+point in space. Then the light will enter an adjacent region of a different 
+spacetime curvature. Since the new region can also be approximated by laws 
+of Special Relativity locally, we can setup a new inertial reference frame 
+where its metric is simply a linear transformation of $\eta_{AB}$ (i.e., 
+the product with Jacobian and its transpose, as the variation in space 
+is thought as infinitesimal). This would hold as long as the change of 
+spacetime curvature is continuous (e.g., no singularity) along the path 
+of the light beam. Furthermore, we can see the new inertial frame as the 
+consequence of a coordinate transform acting on the old, thus: 
+\[
+\frac{\partial \xi^\alpha}{\partial \sigma} = 
+\frac{\partial \xi^\alpha}{\partial x^\mu} \frac{\partial x^\mu}{\partial \sigma},
+\]
+where $\xi^\alpha$ represents the new inertial frame after coordinate change.\\
+
+Again, by the equivalence principle,
+\begin{align*}
+\frac{\partial^2 \xi^\alpha}{\partial \sigma^2} 
+&= \frac{\partial}{\partial \sigma}
+\left(\frac{\partial \xi^\alpha}{\partial x^\mu} \frac{\partial x^\mu}{\partial \sigma}\right) \\\\
+&= \frac{\partial \xi^\alpha}{\partial x^\mu} \frac{\partial^2 x^\mu}{\partial \sigma^2}
++ \frac{\partial^2 \xi^\alpha}{\partial \sigma \partial x^\mu} \frac{\partial x^\mu}{\partial \sigma}
+= 0 \\
+\intertext{Apply the chain rule on the second term, as indicated by the brackets:}
+0 &= \frac{\partial \xi^\alpha}{\partial x^\mu} \frac{\partial^2 x^\mu}{\partial \sigma^2}
++ \frac{\partial^2 \xi^\alpha}{\underbracket{\partial x^\nu} \partial x^\mu} \frac{\partial x^\mu}{\partial \sigma}
+\underbracket{\frac{\partial x^\nu}{\partial \sigma}}
+\intertext{Then, multiply both side by the Jacobian $\partial x^\lambda/ \partial \xi^\alpha$} 
+0 &= \underbracket{\frac{\partial x^\lambda}{\partial \xi^\alpha}  \frac{\partial \xi^\alpha}{\partial x^\mu}} \frac{\partial^2 x^\mu}{\partial \sigma^2}
++ \frac{\partial x^\lambda}{\partial \xi^\alpha} \frac{\partial^2 \xi^\alpha}{\partial x^\nu \partial x^\mu} \frac{\partial x^\mu}{\partial \sigma}
+\frac{\partial x^\nu}{\partial \sigma}, 
+\end{align*}
+and recognize that the annotated contraction results in the Kronecker delta 
+$\delta^{\lambda}_{\mu}$, a tensor equivalence of the identity matrix. By observing 
+the structure of $\delta^{\lambda}_{\mu}$ (indexed component equals 1 when 
+$\lambda=\mu$, and 0 otherwise), one shall realize its index-altering 
+ability in Einstein summation notation [33]. For example:
+\[
+V^{\mu}\delta^{\lambda}_{\mu} = V^{\lambda}
+\]
+for an arbitrary vector $V^\mu$. Using such property, we yield the equation 
+for the light beam's motion:
+\begin{equation*}
+0 = \frac{\partial^2 x^\lambda}{\partial \sigma^2} 
++ \frac{\partial x^\lambda}{\partial \xi^\alpha} 
+\frac{\partial^2 \xi^\alpha}{\partial x^\nu \partial x^\mu} 
+\frac{\partial x^\mu}{\partial \sigma}
+\frac{\partial x^\nu}{\partial \sigma}
+\tag{1}
+\end{equation*}
+which connects the ray's acceleration with its velocity with respect 
+to coordinate time. Steven Weinberg's deduction in [32] ends here, 
+followed by defining the factor in front of the second term as the 
+affine connection (i.e., the Christoffel symbol in the main paper). 
+However, we could proceed to show that this factor can by written entirely 
+in terms of the metric tensor of coordinate system $\xi$, its derivative, and 
+its inverse. \\
+
+By the transformation rule of metric tensors (See Appendix 1), it can be shown 
+that the metric tensor $g_{\alpha\beta}$ of the coordinate system of 
+$\xi^\mu$ takes the form:
+\[
+g_{\alpha\beta} = \eta_{AB} \frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial \xi^B}{\partial x^\beta},
+\]
+with its inverse
+\[
+g^{\alpha\beta} = \eta^{AB} \frac{\partial x^\alpha}{\partial \xi^A} \frac{\partial x^\beta}{\partial \xi^B}
+\]
+One can easily validate that contracting $g_{\alpha\beta}$ with 
+$g_{\beta\gamma}$ by the above expansion indeed produces the 
+Kronecker delta.\\\\
+Now consider the derivative
+\[
+\frac{\partial}{\partial x^\alpha} g_{\mu\nu} = 
+\frac{\partial}{\partial x^\alpha} \eta_{AB} \frac{\partial \xi^A}{\partial x^\mu} \frac{\partial \xi^B}{\partial x^\nu}
+\]
+By the product rule and the invariance of the Minkowski metric we obtain
+\begin{align*}
+\frac{\partial}{\partial x^\alpha} g_{\mu\nu} &= 
+\eta_{AB} \left(\frac{\partial^2 \xi^A}{\partial x^\alpha \partial x^\mu} \frac{\partial \xi^B}{\partial x^\nu}
++ \frac{\partial \xi^A}{\partial x^\mu} \frac{\partial^2 \xi^B}{\partial x^\alpha \partial x^\nu}\right) \\
+\intertext{The similar applies for the permutations of indices:} 
+\frac{\partial}{\partial x^\nu} g_{\alpha\mu} &= 
+\eta_{AB} \left(\frac{\partial^2 \xi^A}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^B}{\partial x^\mu}
++ \frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu}\right) \\
+\frac{\partial}{\partial x^\mu} g_{\nu\alpha} &= 
+\eta_{AB} \left(\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu} \frac{\partial \xi^B}{\partial x^\alpha}
++ \frac{\partial \xi^A}{\partial x^\nu} \frac{\partial^2 \xi^B}{\partial x^\mu \partial x^\alpha}\right)
+\end{align*}
+By the symmetry of the Minkowski metric (i.e., $\eta_{AB} = \eta_{BA}$), and the symmetry of 
+second derivatives (i.e., $\partial / (\partial x^\mu \partial x^\nu) =  \partial / 
+(\partial x^\nu \partial x^\mu) $), we can always rewrite any of the above derivtives with any pairs of 
+$\xi^A$ and $\xi^B$ swaped. For example, 
+\begin{align*}
+\frac{\partial}{\partial x^\nu} g_{\alpha\mu} &= 
+\eta_{AB} \left(\frac{\partial^2 \xi^A}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^B}{\partial x^\mu}
++ \frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu}\right) \\
+&= \eta_{AB} \frac{\partial^2 \xi^A}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^B}{\partial x^\mu}
++ \eta_{AB}\frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu} \\
+\intertext{Since the order of summation does not matter for $A$ and $B$,}
+\frac{\partial}{\partial x^\nu} g_{\alpha\mu}
+&= \eta_{BA} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^A}{\partial x^\mu}
++ \eta_{AB}\frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu} \\
+&= \eta_{AB} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^A}{\partial x^\mu}
++ \eta_{AB}\frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu} \\
+&= \eta_{AB} \left(\frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\alpha} \frac{\partial \xi^A}{\partial x^\mu}
++ \frac{\partial \xi^A}{\partial x^\alpha} \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu}\right)
+\tag{2}
+\end{align*}
+At this point, one may conjecture that a connection exist between a
+linear combination of the three derivatives and the factor in eq. (1). This is 
+indeed correct. Consider the sum
+\begin{align*}
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++ \frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+- \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+&= \eta_{AB} \Bigg[
+    \left(
+        \frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu}
+        \frac{\partial \xi^B}{\partial x^\alpha}
+        +
+        \frac{\partial \xi^A}{\partial x^\alpha}
+        \frac{\partial^2 \xi^B}{\partial x^\nu \partial x^\mu}
+    \right) \\
+&\quad +
+    \left(
+        \frac{\partial^2 \xi^A}{\partial x^\nu \partial x^\alpha}
+        \frac{\partial \xi^B}{\partial x^\mu}
+        -
+        \frac{\partial \xi^A}{\partial x^\mu}
+        \frac{\partial^2 \xi^B}{\partial x^\alpha \partial x^\nu}
+    \right) \\
+&\quad +
+    \left(
+        \frac{\partial \xi^A}{\partial x^\nu}
+        \frac{\partial^2 \xi^B}{\partial x^\mu \partial x^\alpha}
+        -
+        \frac{\partial^2 \xi^A}{\partial x^\alpha \partial x^\mu}
+        \frac{\partial \xi^B}{\partial x^\nu}
+    \right)
+\Bigg]
+\end{align*}
+All grouped terms in $(\cdot)$ can be either combined or canceled  via manipulations 
+like that of (2). Resulting in a simpler form:
+\[
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++ \frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+- \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+=
+2\eta_{AB}\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu}\frac{\partial \xi^B}{\partial x^\alpha}
+\]
+We see that this is already very close to the factor in (1). To continue the simplification, 
+we contract the sum of derivatives with the inverse metric, specifically, summing over $\alpha$:
+\begin{align*}
+g^{\lambda\alpha}\left(\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++ \frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+- \frac{\partial g_{\mu\nu}}{\partial x^\alpha}\right)
+&= 2 g^{\lambda\alpha} \eta_{AB}\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu}\frac{\partial \xi^B}{\partial x^\alpha} \\
+&= 2 \eta^{CD} \frac{\partial x^\lambda}{\partial \xi^C} \underbracket{\frac{\partial x^\alpha}{\partial \xi^D}}
+\eta_{AB}\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu} \underbracket{\frac{\partial \xi^B}{\partial x^\alpha}} \\
+&= 2 \eta^{CD} \frac{\partial x^\lambda}{\partial \xi^C} 
+\eta_{AB}\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu} \delta^{B}_{D} \\
+&= 2 \eta^{CD} \delta^{B}_{D} \eta_{AB} \frac{\partial x^\lambda}{\partial \xi^C} 
+\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu} \\
+&= 2 \delta^{C}_{A}  \frac{\partial x^\lambda}{\partial \xi^C} 
+\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu} \\
+&= 2 \frac{\partial x^\lambda}{\partial \xi^A} 
+\frac{\partial^2 \xi^A}{\partial x^\mu \partial x^\nu}
+\end{align*}
+Compare to (1), we see that this is exactly 2 times the factor in front of $\frac{\partial x^\mu}{\partial \sigma}
+\frac{\partial x^\nu}{\partial \sigma}$. Thus we have proven that the null geodesic equation can 
+be written as 
+\[
+\frac{\partial^2 x^\lambda}{\partial \sigma^2} + 
+\frac{1}{2} g^{\lambda\alpha} \left( \frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++\frac{\partial g_{\beta\mu}}{\partial x^\nu}
+-\frac{\partial g_{\mu\nu}}{\partial x^\beta}\right)
+\frac{\partial x^\mu}{\partial \sigma}
+\frac{\partial x^\nu}{\partial \sigma}
+ = 0
+\]
+
+
+
+% A template:      \frac{\partial}{\partial}
+
+
+\end{document}

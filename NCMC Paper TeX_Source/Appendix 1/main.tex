@@ -1,0 +1,203 @@
+\documentclass{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{mathtools}
+
+% Custom unnumbered section format
+\titleformat{\section}[block]
+  {\normalfont\Large\bfseries}{}{0pt}{}  % Remove section number
+
+% Left-aligned large title
+\pretitle{\begin{flushleft}\LARGE\bfseries}
+\posttitle{\end{flushleft}}
+\preauthor{\begin{flushleft} \large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft} \large}
+\postdate{\end{flushleft}}
+\date{}
+
+% Title info
+\title{Appendix 1}
+\begin{document}
+
+\maketitle
+
+\section{Transformation Law of the Metric} 
+
+In this section, we deduce the transformation law for each 
+individual component of the metric from a fully linear algebraic 
+perspective. Recall that from the main paper, under transformation 
+from coordinate $x$ to $x'$, the metric $M$ transforms according to 
+\[
+M' = J_{x' \mapsto x}^\top M J_{x' \mapsto x},
+\tag{1}
+\]
+where $M'$ is the metric after transformation, and $J_{x' \mapsto x}$ 
+represents the Jacobian matrix for the inverse transformation $x' \mapsto x$.
+Taking $x$ as a function of $x'$: $x(x')$, we can write out the components 
+of $J_{x' \mapsto x}$ as
+\[
+J_{x' \mapsto x} =
+\begin{bmatrix}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^1}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^1}{\partial x^{\prime n}} \\
+\frac{\partial x^2}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^2}{\partial x^{\prime n}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^n}{\partial x^{\prime 1}} & \frac{\partial x^n}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \\
+\end{bmatrix}
+\]
+where $x^i$ and $x'^j$ denote the $i$-th coordinate function of $x$ and 
+the $j$-th coordinate function of $x'$, respectively. Writing the component on the 
+$\mu$-th row and $\nu$-th column as $g_{\mu\nu}$ for (1), we yield
+\[
+M' = 
+\left[
+\begin{array}{cccc}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 1}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 1}} \\
+\frac{\partial x^1}{\partial x^{\prime 2}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 2}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^1}{\partial x^{\prime n}} & \frac{\partial x^2}{\partial x^{\prime n}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \\
+\end{array}
+\right]
+\left[
+\begin{array}{cccc}
+g_{11} & g_{12} & \cdots & g_{1n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+g_{21} & g_{22} & \cdots & g_{2n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\vdots & \vdots & \ddots & \vdots \\
+g_{n1} & g_{n2} & \cdots & g_{nn} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right]
+\left[
+\begin{array}{cccc}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^1}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^1}{\partial x^{\prime n}} \\
+\frac{\partial x^2}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^2}{\partial x^{\prime n}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^n}{\partial x^{\prime 1}} & \frac{\partial x^n}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right]
+\]
+Now focus on the the matrix product $M J_{x' \mapsto x}$.
+\begin{align*}
+M J_{x' \mapsto x} &=
+\left[
+\begin{array}{cccc}
+g_{11} & g_{12} & \cdots & g_{1n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+g_{21} & g_{22} & \cdots & g_{2n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\vdots & \vdots & \ddots & \vdots \\
+g_{n1} & g_{n2} & \cdots & g_{nn} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right]
+\left[
+\begin{array}{cccc}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^1}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^1}{\partial x^{\prime n}} \\
+\frac{\partial x^2}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^2}{\partial x^{\prime n}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^n}{\partial x^{\prime 1}} & \frac{\partial x^n}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right] \\\\
+&=
+\left[
+\begin{array}{cccc}
+\sum_{\lambda=1}^n g_{1\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 1}} &
+\sum_{\lambda=1}^n g_{1\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 2}} &
+\cdots &
+\sum_{\lambda=1}^n g_{1\lambda} \frac{\partial x^\lambda}{\partial x^{\prime n}} \\
+\sum_{\lambda=1}^n g_{2\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 1}} &
+\sum_{\lambda=1}^n g_{2\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 2}} &
+\cdots &
+\sum_{\lambda=1}^n g_{2\lambda} \frac{\partial x^\lambda}{\partial x^{\prime n}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\sum_{\lambda=1}^n g_{n\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 1}} &
+\sum_{\lambda=1}^n g_{n\lambda} \frac{\partial x^\lambda}{\partial x^{\prime 2}} &
+\cdots &
+\sum_{\lambda=1}^n g_{n\lambda} \frac{\partial x^\lambda}{\partial x^{\prime n}} \\
+\end{array}
+\right]
+\end{align*}
+Thus, denoting the entry at the $\mu$-th row, $\nu$-th column as $\tilde{g}_{\mu\nu}$,
+we have
+\[
+\tilde{g}_{\mu\nu} = \sum_{\lambda=1}^n g_{\mu\lambda}
+\frac{\partial x^\lambda}{\partial x^{\prime \nu}}
+\tag{2}
+\]\\
+
+Similarly, for the entire $M'$,
+\begin{align*}
+M' &= 
+\left[
+\begin{array}{cccc}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 1}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 1}} \\
+\frac{\partial x^1}{\partial x^{\prime 2}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 2}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^1}{\partial x^{\prime n}} & \frac{\partial x^2}{\partial x^{\prime n}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \\
+\end{array}
+\right]
+M J_{x' \mapsto x} \\\\
+&=
+\left[
+\begin{array}{cccc}
+\frac{\partial x^1}{\partial x^{\prime 1}} & \frac{\partial x^2}{\partial x^{\prime 1}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 1}} \\
+\frac{\partial x^1}{\partial x^{\prime 2}} & \frac{\partial x^2}{\partial x^{\prime 2}} & \cdots & \frac{\partial x^n}{\partial x^{\prime 2}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x^1}{\partial x^{\prime n}} & \frac{\partial x^2}{\partial x^{\prime n}} & \cdots & \frac{\partial x^n}{\partial x^{\prime n}} \\
+\end{array}
+\right]
+\left[
+\begin{array}{cccc}
+\tilde{g}_{11} & \tilde{g}_{12} & \cdots & \tilde{g}_{1n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\tilde{g}_{21} & \tilde{g}_{22} & \cdots & \tilde{g}_{2n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\tilde{g}_{n1} & \tilde{g}_{n2} & \cdots & \tilde{g}_{nn} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right] \\\\
+&=
+\left[
+\begin{array}{cccc}
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 1} \frac{\partial x^\lambda}{\partial x^{\prime 1}} &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 2} \frac{\partial x^\lambda}{\partial x^{\prime 1}} &
+\cdots &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda n} \frac{\partial x^\lambda}{\partial x^{\prime 1}} \\
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 1} \frac{\partial x^\lambda}{\partial x^{\prime 2}} &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 2} \frac{\partial x^\lambda}{\partial x^{\prime 2}} &
+\cdots &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda n} \frac{\partial x^\lambda}{\partial x^{\prime 2}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 1} \frac{\partial x^\lambda}{\partial x^{\prime n}} &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda 2} \frac{\partial x^\lambda}{\partial x^{\prime n}} &
+\cdots &
+\sum_{\lambda=1}^n \tilde{g}_{\lambda n} \frac{\partial x^\lambda}{\partial x^{\prime n}}
+\end{array}
+\right],
+\end{align*}
+it would have entries
+\[
+g'_{\mu\nu} = \sum_{\lambda=1}^n \tilde{g}_{\lambda\nu}
+\frac{\partial x^\lambda}{\partial x^{\prime \mu}}
+\]
+Now substitute in the expression for $\tilde{g}_{\lambda\nu}$, 
+we obtain the components of $M'$:
+\[
+M' =
+\left[
+\begin{array}{cccc}
+g'_{11} & g'_{12} & \cdots & g'_{1n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+g'_{21} & g'_{22} & \cdots & g'_{2n} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\vdots & \vdots & \ddots & \vdots \\
+g'_{n1} & g'_{n2} & \cdots & g'_{nn} \vphantom{\frac{\partial x^1}{\partial x^{\prime n}}} \\
+\end{array}
+\right],
+\]
+where
+\[
+g'_{\mu\nu} = \sum_{\beta=1}^n 
+\sum_{\alpha=1}^n g_{\alpha\beta} \frac{\partial x^\alpha}{\partial x'^\mu} 
+\frac{\partial x^\beta}{\partial x'^\nu}
+\]
+
+
+
+\end{document}
